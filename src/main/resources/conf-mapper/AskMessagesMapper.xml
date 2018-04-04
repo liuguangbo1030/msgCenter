@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.msg.mc.mapper.qbww.AskMessagesMapper">
+    <insert id="insertAskMessages" parameterType="com.msg.mc.model.qbww.AskMessages" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO qbww.ask_messages(
+            from_user_id,
+            to_user_id,
+            content,
+            is_read,
+            from_deleted,
+            to_deleted,
+            created_at,
+            updated_at
+        ) VALUES (
+            #{fromUserId},
+            #{toUserId},
+            #{content},
+            #{isRead},
+            #{fromDeleted},
+            #{toDeleted},
+            now(),
+            now()
+        )
+    </insert>
+</mapper>

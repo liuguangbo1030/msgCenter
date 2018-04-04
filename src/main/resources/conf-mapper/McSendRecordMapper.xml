@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.msg.mc.mapper.mc.McSendRecordMapper">
+    <resultMap id="McSendRecordMap" type="com.msg.mc.model.mc.McSendRecord">
+        <result column="id" property="id" />
+        <result column="platform_id" property="platformId" />
+        <result column="message_id" property="messageId" />
+        <result column="to_object" property="toObject" />
+        <result column="content" property="content" />
+        <result column="status" property="status" />
+        <result column="create_at" property="createAt" />
+    </resultMap>
+
+    <select id="findMcSendRecordByToObject" parameterType="java.util.Map" resultMap="McSendRecordMap">
+        SELECT
+            id,
+            platform_id,
+            message_id,
+            to_object,
+            content,
+            status,
+            create_at
+        FROM
+            message_center.mc_send_record
+        WHERE
+            to_object = #{toObject}
+        LIMIT 1
+    </select>
+
+    <select id="countMcSendRecord" parameterType="java.util.Map" resultType="java.lang.Integer">
+        SELECT
+            count(*)
+        FROM
+            message_center.mc_send_record
+        WHERE
+            to_object = #{toObject}
+        <if test="startTime != null and endTime !=null">
+            <![CDATA[
+                AND create_at >= #{startTime} AND create_at <= #{endTime}
+            ]]>
+        </if>
+        <if test="status != null">
+            AND status = #{status}
+        </if>
+    </select>
+
+    <insert id="insertMcSendRecord" parameterType="com.msg.mc.model.mc.McSendRecord" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO message_center.mc_send_record(
+            platform_id,
+            message_id,
+            to_object,
+            content,
+            `status`,
+            create_at
+        ) VALUES (
+            #{platformId},
+            #{messageId},
+            #{toObject},
+            #{content},
+            #{status},
+            now()
+        )
+    </insert>
+</mapper>

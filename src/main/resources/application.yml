@@ -1,0 +1,73 @@
+#数据库配置信息
+spring:
+    datasource:
+        name: qbzzSource
+        type: com.alibaba.druid.pool.DruidDataSource
+        url: jdbc:mysql://172.16.3.225:3306?useUnicode=true&characterEncoding=utf8
+        username: qbzz
+        password: 123465
+        driver-class-name: com.mysql.jdbc.Driver
+        minIdle: 1
+        maxActive: 2
+        initialSize: 1
+        timeBetweenEvictionRunsMillis: 3000
+        minEvictableIdleTimeMillis: 300000
+        validationQuery: SELECT 1
+        testWhileIdle: true
+        testOnBorrow: false
+        testOnReturn: false
+    kafka:
+        bootstrap-servers: 172.16.3.225:9092
+        consumer:
+            group-id: qbzz-consumer-group
+    mail:
+        host: smtp.exmail.qq.com
+        username: notification@qibaozz.com
+        password: QBzz2016
+        protocol: smtp
+        port: 465
+        properties:
+            mail:
+                smtp:
+                    auth: true
+                    ssl:
+                        enable: true
+                    socketFactory:
+                        class: javax.net.ssl.SSLSocketFactory
+    freemarker:
+        template-loader-path: classpath:/web/
+        cache: false
+        charset: UTF-8
+        check-template-location: true
+        content-type: text/html
+        expose-request-attributes: true
+        expose-session-attributes: true
+        request-context-attribute: request
+        suffix: .ftl
+
+#服务器配置信息
+server:
+    port: 9010
+#日志文件配置信息
+logging:
+    config: classpath:logback.xml
+    level: debug
+#错误码信息
+errorCode:
+    list:
+        - code: 0
+          message: success
+        - code: 1
+          message: failure
+        - code: 80001
+          message: 请求参数不合法
+        - code: 80002
+          message: 系统异常
+
+#云片配置信息
+yunpian:
+    key: "430c6711eff8790f8d9d93232343434"
+    url: "https://sms.yunpian.com/v2/sms/single_send.json"
+    tplUrl: "https://sms.yunpian.com/v2/sms/tpl_single_send.json"
+    send: 0
+    total: 9

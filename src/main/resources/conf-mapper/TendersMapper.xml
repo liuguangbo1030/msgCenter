@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.msg.mc.mapper.qbzz.TendersMapper">
+    <resultMap id="TendersMap" type="com.msg.mc.model.qbzz.Tenders">
+        <result column="tender_name" property="tenderName" />
+        <result column="category_id" property="categoryId" />
+        <result column="products_id" property="productsId" />
+        <result column="tend_key" property="tendKey" />
+        <result column="clause_id" property="clauseId" />
+        <result column="price" property="price" />
+        <result column="quotation_deadline" property="quotationDeadline" />
+        <result column="tenders_pay_type" property="tendersPayType" />
+        <result column="tenders_is_open" property="tendersIsOpen" />
+        <result column="tenders_status" property="tendersStatus" />
+        <result column="applicant" property="applicant" />
+        <result column="insured" property="insured" />
+        <result column="begin_time" property="beginTime" />
+        <result column="end_time" property="endTime" />
+        <result column="insurance_city_id" property="insuranceCityId" />
+        <result column="insurance_address" property="insuranceAddress" />
+        <result column="industrys_id" property="industrysId" />
+        <result column="sub_industrys_id" property="subIndustrysId" />
+        <result column="tenders_currency_id" property="tendersCurrencyId" />
+        <result column="insurance_mark_area" property="insuranceMarkArea" />
+        <result column="jurisdiction" property="jurisdiction" />
+        <result column="dispute_disposals" property="disputeDisposals" />
+        <result column="deductible" property="deductible" />
+        <result column="additional_perils_clause" property="additionalPerilsClause" />
+        <result column="special_agreement" property="specialAgreement" />
+        <result column="created_by" property="createdBy" />
+        <result column="created_at" property="createdAt" />
+        <result column="updated_by" property="updatedBy" />
+        <result column="updated_at" property="updatedAt" />
+        <result column="is_del" property="isDel" />
+        <result column="tender_wish_book_url" property="tenderWishBookUrl" />
+        <result column="tender_wish_book_name" property="tenderWishBookName" />
+        <result column="applicant_id" property="applicantId" />
+        <result column="insured_id" property="insuredId" />
+        <result column="is_maintain" property="isMaintain" />
+        <result column="tender_is_expire" property="tenderIsExpire" />
+        <result column="is_auth_del" property="isAuthDel" />
+        <result column="business_type" property="businessType" />
+    </resultMap>
+
+    <!-- 查询标信息 -->
+    <select id="findTendersById" parameterType="java.util.Map" resultMap="TendersMap">
+        SELECT
+            id,
+            tender_name,
+            category_id,
+            products_id,
+            tend_key,
+            clause_id,
+            price,
+            quotation_deadline,
+            tenders_pay_type,
+            tenders_is_open,
+            tenders_status,
+            applicant,
+            insured,
+            begin_time,
+            end_time,
+            insurance_city_id,
+            insurance_address,
+            industrys_id,
+            sub_industrys_id,
+            tenders_currency_id,
+            insurance_mark_area,
+            jurisdiction,
+            dispute_disposals,
+            deductible,
+            additional_perils_clause,
+            special_agreement,
+            created_by,
+            created_at,
+            updated_by,
+            updated_at,
+            is_del,
+            tender_wish_book_url,
+            tender_wish_book_name,
+            applicant_id,
+            insured_id,
+            is_maintain,
+            tender_is_expire,
+            is_auth_del,
+            business_type
+        FROM
+            nqbzz.tenders
+        WHERE
+            id = #{id}
+        LIMIT 1
+    </select>
+</mapper>

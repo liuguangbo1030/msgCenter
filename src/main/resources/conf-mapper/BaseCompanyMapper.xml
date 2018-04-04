@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.msg.mc.mapper.qbzz.BaseCompanyMapper">
+    <resultMap id="BaseCompanyMap" type="com.msg.mc.model.qbzz.BaseCompany">
+        <result column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="cid" property="cid" />
+        <result column="abbr" property="abbr" />
+        <result column="address" property="address" />
+    </resultMap>
+    <select id="findBaseCompanyById" parameterType="java.util.Map" resultMap="BaseCompanyMap">
+        SELECT
+            id,
+            name,
+            cid,
+            abbr,
+            address
+        FROM
+            nqbzz.base_company
+        WHERE
+            id = #{id}
+        LIMIT 1
+    </select>
+</mapper>

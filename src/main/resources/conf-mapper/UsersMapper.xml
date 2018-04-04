@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.msg.mc.mapper.qbzz.UsersMapper">
+    <resultMap id="UsersMap" type="com.msg.mc.model.qbzz.Users">
+        <result column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="email" property="email" />
+        <result column="cellphone" property="cellphone" />
+        <result column="status" property="status" />
+        <result column="companies_worked" property="companiesWorked" />
+        <result column="company_id" property="companyId" />
+    </resultMap>
+    <select id="findUsersById" parameterType="java.util.Map" resultMap="UsersMap">
+        SELECT
+            id,
+            name,
+            email,
+            cellphone,
+            status,
+            companies_worked,
+            company_id
+        FROM
+            nqbzz.users
+        WHERE
+            id = #{id}
+        LIMIT 1
+    </select>
+</mapper>
