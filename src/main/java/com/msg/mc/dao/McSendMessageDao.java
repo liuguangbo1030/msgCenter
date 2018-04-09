@@ -9,9 +9,8 @@ import org.springframework.stereotype.Component;
 import java.util.Map;
 
 /**
- * @author cloudy ［Cloudy.liu@qibaozz.com］
+ * @author cloudy
  * @version 1.0
- * @company 前海企保科技（深圳）有限公司
  * @date 17/6/7 下午5:10
  */
 @Component

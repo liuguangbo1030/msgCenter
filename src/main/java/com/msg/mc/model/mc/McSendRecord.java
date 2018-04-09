@@ -3,9 +3,8 @@ package com.msg.mc.model.mc;
 import java.util.Date;
 
 /**
- * @author cloudy ［Cloudy.liu@qibaozz.com］
+ * @author cloudy
  * @version 1.0
- * @company 前海企保科技（深圳）有限公司
  * @date 17/6/7 下午4:56
  */
 public class McSendRecord {

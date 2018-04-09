@@ -7,7 +7,6 @@ import java.util.List;
  *
  * @author zhouxing
  * @version 1.0
- * @company 前海企保科技（深圳）有限公司
  * @date 2016年9月5日
  */
 public class InformationCenterUtil {

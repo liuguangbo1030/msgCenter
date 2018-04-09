@@ -8,8 +8,7 @@ import org.springframework.stereotype.Component;
 /**
  * 通用实例获取类
  * @version 1.0
- * @author zhouxing
- * @company 前海企保科技（深圳）有限公司
+ * @author cloudy
  * @date 2016年9月5日
  */
 @Component

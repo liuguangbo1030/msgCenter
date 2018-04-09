@@ -14,9 +14,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author  cloudy ［Cloudy.liu@qibaozz.com］
+ * @author  cloudy
  * @version  1.0
- * @company 前海企保科技（深圳）有限公司
  * @date 17/6/7 上午10:08
  */
 @Component("agentUserMessageService")

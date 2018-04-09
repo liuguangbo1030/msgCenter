@@ -13,8 +13,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * web启动配置
  * @version 1.0
- * @author Administrator
- * @company 前海企保科技（深圳）有限公司
+ * @author cloudy
  * @date 2016年8月25日
  */
 @Configuration

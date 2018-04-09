@@ -12,7 +12,6 @@ import org.springframework.stereotype.Service;
 /**
  * @author cloudy
  * @version 1.0
- * @company 前海企保科技（深圳）有限公司
  * @date 2016/8/30.
  */
 @Service

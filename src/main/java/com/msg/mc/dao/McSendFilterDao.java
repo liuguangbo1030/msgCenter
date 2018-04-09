@@ -6,9 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
- * @author cloudy ［Cloudy.liu@qibaozz.com］
+ * @author cloudy
  * @version 1.0
- * @company 前海企保科技（深圳）有限公司
  * @date 17/6/13 下午7:03
  */
 @Component
